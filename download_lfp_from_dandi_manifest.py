@@ -4,6 +4,13 @@ import pickle
 import subprocess
 from pathlib import Path
 
+"""
+Using dandi_manifest.json, created manually from https://api.dandiarchive.org/api/dandisets/000021/versions/draft/assets/ , and VISpm_VISp_probes.pkl (from session_and_probes.py), this file automatically downloads session and LFP NWB files using Dandi.
+Dataset link: https://dandiarchive.org/dandiset/000021/
+
+Download folder is specified by OUTPUT_DIR. If a file has already been downloaded it will be skipped.
+"""
+
 OUTPUT_DIR = Path.home()/'Desktop'/'dandi_lfp'
 
 manifest_path = 'dandi_manifest.json'

@@ -4,6 +4,12 @@ from pathlib import Path
 from allensdk.brain_observatory.ecephys.ecephys_project_cache import EcephysProjectCache
 import pickle
 
+"""
+Gathering metadata from Ecephys Allen data in the following format:
+[Session ID, First Probe ID, Second Probe ID]
+The first probe is selected to have recorded from VISpm/VISp and the second from VISp/VISpm correspondingly.
+"""
+
 output_dir = Path.home() / 'Desktop' / 'disk1' / 'ecephys_data'
 
 cache = EcephysProjectCache.from_warehouse(manifest=output_dir / 'manifest.json')
