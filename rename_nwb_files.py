@@ -10,8 +10,8 @@ def mkdir(path):
     if not os.path.exists(path): os.makedirs(path)
     return path
 
-original_path = Path.home()/'Desktop'/'disk1'/'dandi_lfp'
-resulting_path = Path.home()/'Desktop'/'disk1'/'ecephys_data'
+original_path = Path.home()/'Desktop'/'disk2'/'dandi_lfp'
+resulting_path = Path.home()/'Desktop'/'disk2'/'ecephys_data'
 
 files = os.listdir(original_path)
 
