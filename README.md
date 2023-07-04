@@ -10,6 +10,6 @@ __download_lfp_from_dandi_manifest.py__ : downloading NWB files with LFP data us
 
 __rename_nwb_files.py__ : moving and renaming donwloaded NWB files according to directory format of AllenSDK (EcephysProjectCache)
 
-__spectral_analysis_pipepline.ipynb__ : main pipeline for accessing LFP data from NWB files, selecting maximum signal channels, spectrograms, PSD, running speed analysis and stimulus-averaged LFP trace visualisation
+__spectral_analysis_pipepline.ipynb__ : main pipeline for accessing LFP data from NWB files, selecting maximum signal channels, spectrograms, PSD, running speed analysis (initial) and stimulus-averaged LFP trace visualisation (initial)
 
 __generalised_phase.ipynb__ : initial implementation of https://github.com/mullerlab/generalized-phase in Python
