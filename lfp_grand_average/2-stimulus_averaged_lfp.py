@@ -282,5 +282,6 @@ if __name__ == '__main__':
         
     # run(cache, probe_list, 719161530, 9.56, window, sf, output_folder)
     for session_id, thresh in chosen_velocity_thresholds.items():
-        run(cache, probe_list, session_id, thresh, window, sf, output_folder)
+        if session_id == 750332458: continue
+        else: run(cache, probe_list, session_id, thresh, window, sf, output_folder)
         
