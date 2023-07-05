@@ -13,3 +13,7 @@ __rename_nwb_files.py__ : moving and renaming donwloaded NWB files according to 
 __spectral_analysis_pipepline.ipynb__ : main pipeline for accessing LFP data from NWB files, selecting maximum signal channels, spectrograms, PSD, running speed analysis (initial) and stimulus-averaged LFP trace visualisation (initial)
 
 __generalised_phase.ipynb__ : initial implementation of https://github.com/mullerlab/generalized-phase in Python
+
+__lfp_grand_average/1-velocity_threshold.ipynb__ : fitting a bimodal curve to running velocity distribution in each session to determine threshold
+
+__lfp_grand_average/2-stimulus_averaged_lfp.py__ : calculating LFP traces averaged over flash stimuli presentations (8 conditions: toWhite/toBlack and running/nonrunning) 
