@@ -217,8 +217,12 @@ def run(cache, probe_list, session_id, VELOCITY_THRESHOLD, window_range, sf, out
     
     toWhite_running_flashes, toBlack_running_flashes, toWhite_nonrunning_flashes, toBlack_nonrunning_flashes = get_eight_flash_conditions(session, VELOCITY_THRESHOLD)
     
-    VISpm_electrode_depth = int(channel_df[channel_df.index==VISpm_max_channel].dorsal_ventral_ccf_coordinate.item()) # in microns
-    VISp_electrode_depth = int(channel_df[channel_df.index==VISp_max_channel].dorsal_ventral_ccf_coordinate.item())
+    try:
+        VISpm_electrode_depth = int(channel_df[channel_df.index==VISpm_max_channel].dorsal_ventral_ccf_coordinate.item()) # in microns
+        VISp_electrode_depth = int(channel_df[channel_df.index==VISp_max_channel].dorsal_ventral_ccf_coordinate.item())
+    except:
+        VISpm_electrode_depth = 'NaN'
+        VISp_electrode_depth = 'NaN'
 
 
     # VISpm
