@@ -87,7 +87,9 @@ def load_and_process_lfps(session, selected_VISpm_probe_id, selected_VISp_probe_
     print(f'LFP data loaded in {time.time()-t1} seconds.')
     
     stim_epochs = session.get_stimulus_epochs()
-    flash_index = stim_epochs[stim_epochs.stimulus_name=='flashes'].index.item()
+    flash_index = stim_epochs[stim_epochs.stimulus_name=='flashes'].index
+    print(f'{len(flash_index)} flash block/s present: choosing the first with duration = {stim_epochs[stim_epochs.index==flash_index[0]].duration.item()} seconds.')
+    flash_index = flash_index[0] # [0] instead of using ".item()" to only grab the first in case there are multiple flash blocks
     global_start_time = stim_epochs[stim_epochs.index==flash_index-1].start_time.item()
     global_end_time = stim_epochs[stim_epochs.index==flash_index+1].stop_time.item()
     
@@ -159,6 +161,8 @@ def get_eight_flash_conditions(session, VELOCITY_THRESHOLD):
 
     for stim_id,stim_pres in stim_flashes.iterrows():
         # From running velocity dataframe, select all recorded velocity values during presentation of a single stimulus (between start and end of a flash)
+        t1 = time_velocity_df[time_velocity_df.running_speed_midpoint < stim_pres.start_time].index[-1] # getting the closest timepoint index just before the start of the flash as the lower bound
+        t2 = time_velocity_df[time_velocity_df.running_speed_midpoint > stim_pres.stop_time].index[0] # getting the closest timepoint index just before the start of the flash as the lower bound
         filtered_df = time_velocity_df[(time_velocity_df.running_speed_midpoint >= stim_pres.start_time) & (time_velocity_df.running_speed_midpoint <= stim_pres.stop_time)]
         # Calculate mean velocity during this presentation
         vel_mean = filtered_df.velocity.mean()
@@ -267,21 +271,22 @@ if __name__ == '__main__':
     output_folder = Path.home() / 'Desktop' / 'disk2' / 'grand_average_lfps'
     
     # Open file with velocity thresholds chosen in 1-velocity_threshold.ipynb
-    with open('../chosen_velocity_thresholds.pkl', 'rb') as f:
+    with open('chosen_velocity_thresholds.pkl', 'rb') as f:
         chosen_velocity_thresholds = pickle.load(f)
       
     # Initialise cache
     output_dir = Path.home() / 'Desktop' / 'disk2' / 'ecephys_data'
     cache = EcephysProjectCache.from_warehouse(manifest=output_dir / 'manifest.json')
     
-    with open('../VISpm_VISp_probes.pkl', 'rb') as f:
+    with open('VISpm_VISp_probes.pkl', 'rb') as f:
         probe_list = pickle.load(f)
     
     window = [-1, 2.25] # averaging time window with respect to start_time of flash presentation
     sf = 1250 # LFP sampling frequency
-        
-    # run(cache, probe_list, 719161530, 9.56, window, sf, output_folder)
+     
+    # run(cache, probe_list, 755434585, 7, window, sf, output_folder)
     for session_id, thresh in chosen_velocity_thresholds.items():
-        if session_id == 750332458: continue
-        else: run(cache, probe_list, session_id, thresh, window, sf, output_folder)
-        
+        try: 
+            run(cache, probe_list, session_id, thresh, window, sf, output_folder)
+        except:
+            print(f'ERROR: SESSION ID = {session_id}.\n')

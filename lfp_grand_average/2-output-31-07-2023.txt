@@ -1,0 +1,443 @@
+LFP data loaded in 26.098326444625854 seconds.
+LFP data loaded in 22.799022912979126 seconds.
+1 flash block/s present: choosing the first with duration = 298.4993039311332 seconds.
+VISpm channels = 22
+VISp channels = 22
+VISpm_max_channel = 850249821
+VISp_max_channel = 850251411
+120 presentations where animal is running
+30 presentations where animal is not running
+toWhite_running_flashes 58 presentations
+toBlack_running_flashes 62 presentations
+toWhite_nonrunning_flashes 17 presentations
+toBlack_nonrunning_flashes 13 presentations
+Session 719161530: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 23.438434600830078 seconds.
+LFP data loaded in 24.891594886779785 seconds.
+1 flash block/s present: choosing the first with duration = 298.4995328138357 seconds.
+VISpm channels = 18
+VISp channels = 20
+VISpm_max_channel = 850230001
+VISp_max_channel = 850231395
+13 presentations where animal is running
+137 presentations where animal is not running
+toWhite_running_flashes 8 presentations
+toBlack_running_flashes 5 presentations
+toWhite_nonrunning_flashes 67 presentations
+toBlack_nonrunning_flashes 70 presentations
+Session 732592105: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 24.29829740524292 seconds.
+LFP data loaded in 21.964417695999146 seconds.
+1 flash block/s present: choosing the first with duration = 298.4993443402973 seconds.
+VISpm channels = 21
+VISp channels = 23
+VISpm_max_channel = 850143254
+VISp_max_channel = 850144466
+11 presentations where animal is running
+139 presentations where animal is not running
+toWhite_running_flashes 5 presentations
+toBlack_running_flashes 6 presentations
+toWhite_nonrunning_flashes 70 presentations
+toBlack_nonrunning_flashes 69 presentations
+Session 754312389: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 20.35268521308899 seconds.
+LFP data loaded in 25.60258460044861 seconds.
+1 flash block/s present: choosing the first with duration = 298.4993961630223 seconds.
+VISpm channels = 22
+VISp channels = 23
+ERROR: SESSION ID = 750332458
+LFP data loaded in 26.048826456069946 seconds.
+LFP data loaded in 24.136108875274658 seconds.
+1 flash block/s present: choosing the first with duration = 298.49928990521175 seconds.
+VISpm channels = 21
+VISp channels = 25
+VISpm_max_channel = 850161750
+VISp_max_channel = 850160482
+112 presentations where animal is running
+38 presentations where animal is not running
+toWhite_running_flashes 58 presentations
+toBlack_running_flashes 54 presentations
+toWhite_nonrunning_flashes 17 presentations
+toBlack_nonrunning_flashes 21 presentations
+Session 751348571: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 23.16680383682251 seconds.
+LFP data loaded in 25.23314881324768 seconds.
+2 flash block/s present: choosing the first with duration = 198.4157050870897 seconds.
+VISpm channels = 17
+VISp channels = 19
+VISpm_max_channel = 850218871
+VISp_max_channel = 850220101
+61 presentations where animal is running
+85 presentations where animal is not running
+toWhite_running_flashes 31 presentations
+toBlack_running_flashes 30 presentations
+toWhite_nonrunning_flashes 41 presentations
+toBlack_nonrunning_flashes 44 presentations
+Session 737581020: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 24.111259698867798 seconds.
+LFP data loaded in 28.887303829193115 seconds.
+1 flash block/s present: choosing the first with duration = 298.4995482421764 seconds.
+VISpm channels = 24
+VISp channels = 22
+VISpm_max_channel = 850121884
+VISp_max_channel = 850125558
+55 presentations where animal is running
+95 presentations where animal is not running
+toWhite_running_flashes 26 presentations
+toBlack_running_flashes 29 presentations
+toWhite_nonrunning_flashes 49 presentations
+toBlack_nonrunning_flashes 46 presentations
+Session 756029989: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.095613956451416 seconds.
+LFP data loaded in 23.86673331260681 seconds.
+1 flash block/s present: choosing the first with duration = 298.4994539890754 seconds.
+VISpm channels = 22
+VISp channels = 24
+VISpm_max_channel = 850131658
+VISp_max_channel = 850132974
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 755434585
+LFP data loaded in 27.153178453445435 seconds.
+LFP data loaded in 24.900248289108276 seconds.
+1 flash block/s present: choosing the first with duration = 298.5160725593598 seconds.
+VISpm channels = 22
+VISp channels = 23
+VISpm_max_channel = 850079614
+VISp_max_channel = 850078436
+2 presentations where animal is running
+148 presentations where animal is not running
+toWhite_running_flashes 1 presentations
+toBlack_running_flashes 1 presentations
+toWhite_nonrunning_flashes 74 presentations
+toBlack_nonrunning_flashes 74 presentations
+Session 761418226: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.754777193069458 seconds.
+LFP data loaded in 23.816824197769165 seconds.
+1 flash block/s present: choosing the first with duration = 298.5160055821093 seconds.
+VISpm channels = 25
+VISp channels = 25
+VISpm_max_channel = 850186104
+VISp_max_channel = 850184664
+3 presentations where animal is running
+147 presentations where animal is not running
+toWhite_running_flashes 2 presentations
+toBlack_running_flashes 1 presentations
+toWhite_nonrunning_flashes 73 presentations
+toBlack_nonrunning_flashes 74 presentations
+Session 742951821: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 24.16540837287903 seconds.
+LFP data loaded in 21.88220500946045 seconds.
+1 flash block/s present: choosing the first with duration = 298.4993806550742 seconds.
+VISpm channels = 23
+VISp channels = 27
+VISpm_max_channel = 849727540
+VISp_max_channel = 849726176
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 759883607
+LFP data loaded in 24.162079572677612 seconds.
+LFP data loaded in 23.76273250579834 seconds.
+1 flash block/s present: choosing the first with duration = 298.4993182671076 seconds.
+VISpm channels = 22
+VISp channels = 27
+VISpm_max_channel = 850169668
+VISp_max_channel = 850164370
+84 presentations where animal is running
+66 presentations where animal is not running
+toWhite_running_flashes 42 presentations
+toBlack_running_flashes 42 presentations
+toWhite_nonrunning_flashes 33 presentations
+toBlack_nonrunning_flashes 33 presentations
+Session 750749662: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 23.37113046646118 seconds.
+LFP data loaded in 24.035133838653564 seconds.
+1 flash block/s present: choosing the first with duration = 298.49936544158254 seconds.
+VISpm channels = 23
+VISp channels = 23
+VISpm_max_channel = 850090054
+VISp_max_channel = 850088590
+119 presentations where animal is running
+31 presentations where animal is not running
+toWhite_running_flashes 59 presentations
+toBlack_running_flashes 60 presentations
+toWhite_nonrunning_flashes 16 presentations
+toBlack_nonrunning_flashes 15 presentations
+Session 760693773: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.87586736679077 seconds.
+LFP data loaded in 23.41022539138794 seconds.
+1 flash block/s present: choosing the first with duration = 298.49943046328144 seconds.
+VISpm channels = 21
+VISp channels = 25
+VISpm_max_channel = 850102170
+VISp_max_channel = 850100688
+112 presentations where animal is running
+38 presentations where animal is not running
+toWhite_running_flashes 61 presentations
+toBlack_running_flashes 51 presentations
+toWhite_nonrunning_flashes 14 presentations
+toBlack_nonrunning_flashes 24 presentations
+Session 758798717: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 24.933900356292725 seconds.
+LFP data loaded in 23.74237585067749 seconds.
+1 flash block/s present: choosing the first with duration = 298.49943379540946 seconds.
+VISpm channels = 24
+VISp channels = 24
+VISpm_max_channel = 850009604
+VISp_max_channel = 850010958
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 767871931
+LFP data loaded in 26.444795608520508 seconds.
+LFP data loaded in 22.256754398345947 seconds.
+1 flash block/s present: choosing the first with duration = 298.4996329050864 seconds.
+VISpm channels = 24
+VISp channels = 24
+VISpm_max_channel = 849992364
+VISp_max_channel = 849993556
+53 presentations where animal is running
+97 presentations where animal is not running
+toWhite_running_flashes 29 presentations
+toBlack_running_flashes 24 presentations
+toWhite_nonrunning_flashes 46 presentations
+toBlack_nonrunning_flashes 51 presentations
+Session 771160300: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 23.755109310150146 seconds.
+LFP data loaded in 21.549814462661743 seconds.
+1 flash block/s present: choosing the first with duration = 298.49943256655456 seconds.
+VISpm channels = 21
+VISp channels = 22
+VISpm_max_channel = 849984800
+VISp_max_channel = 849986074
+26 presentations where animal is running
+124 presentations where animal is not running
+toWhite_running_flashes 12 presentations
+toBlack_running_flashes 14 presentations
+toWhite_nonrunning_flashes 63 presentations
+toBlack_nonrunning_flashes 61 presentations
+Session 771990200: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.224507093429565 seconds.
+LFP data loaded in 23.642459869384766 seconds.
+1 flash block/s present: choosing the first with duration = 298.499413269868 seconds.
+VISpm channels = 24
+VISp channels = 24
+VISpm_max_channel = 849959854
+VISp_max_channel = 849958488
+10 presentations where animal is running
+140 presentations where animal is not running
+toWhite_running_flashes 3 presentations
+toBlack_running_flashes 7 presentations
+toWhite_nonrunning_flashes 72 presentations
+toBlack_nonrunning_flashes 68 presentations
+Session 778240327: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.038813829421997 seconds.
+LFP data loaded in 19.93645453453064 seconds.
+1 flash block/s present: choosing the first with duration = 298.4994681183425 seconds.
+VISpm channels = 26
+VISp channels = 25
+VISpm_max_channel = 849937134
+VISp_max_channel = 849935878
+150 presentations where animal is running
+0 presentations where animal is not running
+toWhite_running_flashes 75 presentations
+toBlack_running_flashes 75 presentations
+toWhite_nonrunning_flashes 0 presentations
+toBlack_nonrunning_flashes 0 presentations
+ERROR: SESSION ID = 786091066
+LFP data loaded in 24.467766523361206 seconds.
+LFP data loaded in 25.48908519744873 seconds.
+1 flash block/s present: choosing the first with duration = 298.49944697555793 seconds.
+VISpm channels = 24
+VISp channels = 23
+VISpm_max_channel = 849719816
+VISp_max_channel = 849718390
+42 presentations where animal is running
+108 presentations where animal is not running
+toWhite_running_flashes 26 presentations
+toBlack_running_flashes 16 presentations
+toWhite_nonrunning_flashes 49 presentations
+toBlack_nonrunning_flashes 59 presentations
+Session 778998620: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.31425428390503 seconds.
+LFP data loaded in 21.45980954170227 seconds.
+1 flash block/s present: choosing the first with duration = 298.4994853797675 seconds.
+VISpm channels = 26
+VISp channels = 24
+VISpm_max_channel = 849711582
+VISp_max_channel = 849710126
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 779839471
+LFP data loaded in 26.290594816207886 seconds.
+LFP data loaded in 23.326831579208374 seconds.
+1 flash block/s present: choosing the first with duration = 298.4994637223881 seconds.
+VISpm channels = 23
+VISp channels = 23
+VISpm_max_channel = 849903428
+VISp_max_channel = 849907064
+42 presentations where animal is running
+108 presentations where animal is not running
+toWhite_running_flashes 19 presentations
+toBlack_running_flashes 23 presentations
+toWhite_nonrunning_flashes 56 presentations
+toBlack_nonrunning_flashes 52 presentations
+Session 791319847: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 29.6657612323761 seconds.
+LFP data loaded in 28.393388509750366 seconds.
+1 flash block/s present: choosing the first with duration = 298.4994887769508 seconds.
+VISpm channels = 25
+VISp channels = 25
+VISpm_max_channel = 849863346
+VISp_max_channel = 849861986
+20 presentations where animal is running
+130 presentations where animal is not running
+toWhite_running_flashes 9 presentations
+toBlack_running_flashes 11 presentations
+toWhite_nonrunning_flashes 66 presentations
+toBlack_nonrunning_flashes 64 presentations
+Session 797828357: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.15859293937683 seconds.
+LFP data loaded in 23.92852258682251 seconds.
+1 flash block/s present: choosing the first with duration = 298.49939698067396 seconds.
+VISpm channels = 24
+VISp channels = 25
+VISpm_max_channel = 850096000
+VISp_max_channel = 850094666
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 760345702
+LFP data loaded in 26.608696699142456 seconds.
+LFP data loaded in 24.288271188735962 seconds.
+1 flash block/s present: choosing the first with duration = 298.4994336401269 seconds.
+VISpm channels = 16
+VISp channels = 23
+VISpm_max_channel = 850263332
+VISp_max_channel = 850261814
+115 presentations where animal is running
+35 presentations where animal is not running
+toWhite_running_flashes 61 presentations
+toBlack_running_flashes 54 presentations
+toWhite_nonrunning_flashes 14 presentations
+toBlack_nonrunning_flashes 21 presentations
+Session 715093703: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 25.24125027656555 seconds.
+LFP data loaded in 25.05059051513672 seconds.
+1 flash block/s present: choosing the first with duration = 298.49959086741956 seconds.
+VISpm channels = 23
+VISp channels = 25
+VISpm_max_channel = 849878336
+VISp_max_channel = 849875576
+2 presentations where animal is running
+148 presentations where animal is not running
+toWhite_running_flashes 2 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 73 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 794812542
+LFP data loaded in 24.76596450805664 seconds.
+LFP data loaded in 27.385944843292236 seconds.
+1 flash block/s present: choosing the first with duration = 298.4995230055383 seconds.
+VISpm channels = 23
+VISp channels = 16
+VISpm_max_channel = 849792998
+VISp_max_channel = 849791914
+2 presentations where animal is running
+148 presentations where animal is not running
+toWhite_running_flashes 1 presentations
+toBlack_running_flashes 1 presentations
+toWhite_nonrunning_flashes 74 presentations
+toBlack_nonrunning_flashes 74 presentations
+Session 821695405: Averaged LFP traces saved for 8 flash/running conditions.
+
+LFP data loaded in 23.24213981628418 seconds.
+LFP data loaded in 23.01819944381714 seconds.
+1 flash block/s present: choosing the first with duration = 298.4995722291144 seconds.
+VISpm channels = 23
+VISp channels = 21
+ERROR: SESSION ID = 831882777
+LFP data loaded in 30.791772603988647 seconds.
+LFP data loaded in 31.989025354385376 seconds.
+1 flash block/s present: choosing the first with duration = 298.49951768058645 seconds.
+VISpm channels = 23
+VISp channels = 24
+VISpm_max_channel = 850313421
+VISp_max_channel = 850314310
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 816200189
+LFP data loaded in 24.381911516189575 seconds.
+LFP data loaded in 20.836541652679443 seconds.
+1 flash block/s present: choosing the first with duration = 298.4977903880397 seconds.
+VISpm channels = 23
+VISp channels = 21
+VISpm_max_channel = 868301285
+VISp_max_channel = 868302351
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 840012044
+LFP data loaded in 21.75022292137146 seconds.
+LFP data loaded in 21.168622970581055 seconds.
+1 flash block/s present: choosing the first with duration = 298.4980431323713 seconds.
+VISpm channels = 22
+VISp channels = 24
+VISpm_max_channel = 868931355
+VISp_max_channel = 868932743
+0 presentations where animal is running
+150 presentations where animal is not running
+toWhite_running_flashes 0 presentations
+toBlack_running_flashes 0 presentations
+toWhite_nonrunning_flashes 75 presentations
+toBlack_nonrunning_flashes 75 presentations
+ERROR: SESSION ID = 839068429
+LFP data loaded in 25.61283230781555 seconds.
+LFP data loaded in 25.099679946899414 seconds.
+1 flash block/s present: choosing the first with duration = 298.4979651651763 seconds.
+VISpm channels = 24
+VISp channels = 24
+ERROR: SESSION ID = 847657808
