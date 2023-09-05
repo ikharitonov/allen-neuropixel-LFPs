@@ -3,26 +3,13 @@ import pandas as pd
 import pickle
 import time
 from pathlib import Path
+from scipy import signal
 from allensdk.brain_observatory.ecephys.ecephys_project_cache import EcephysProjectCache
 
 
 """
 
-This script is for computing 8 averaged LFP traces for toWhite/toBlack flash presentation conditions and running/nonrunning states.
-It requires velocity thresholds (chosen manually or automatically in 1-velocity_threshold.ipynb) provided in chosen_velocity_thresholds.pkl.
-As well as paths to directories with all relevant ecephys session/LFP data and reference of session IDs and VISpm/VISp probe IDs (VISpm_VISp_probes.pkl).
-
-1) Available session IDs and corresponding velocity thresholds are read from a file.
-2) Cache is initialised and probe IDs are read.
-3) Session data is loaded and probe IDs are assigned with corresponding areas.
-4) LFP files are loaded into memory.
-5) LFP traces are quality controlled, clipped to the period of flash stimuli presentations.
-6) Channels with maximum amplitude LFP traces are selected within VISpm/VISp.
-7) Velocity time series of the mouse are loaded from session data.
-8) Each flash presentation is assigned with a class ([toWhite OR toBlack] AND [running OR nonrunning]) based on the flash data itself and chosen velocity threshold.
-9) Electrode depth of the maximum amplitude VISpm/VISp channel is read from metadata.
-10) VISpm/VISp LFP traces are aligned to each class of flash presentation according to chosen time window range (before and after the start time of the flash).
-11) Aligned LFP traces are averaged over presentations and saved into .npy files.
+This script is identical to 2-stimulus_averaged_lfp.py, except for computing Power Spectral Density (PSD) for each presentation at step 11.
 
 """
 
@@ -197,6 +184,30 @@ def get_eight_flash_conditions(session, VELOCITY_THRESHOLD):
 
 
 
+def calculate_power_spectrum(data, sf):
+    f,s = signal.welch(data, sf, scaling='spectrum', nperseg=sf)
+
+    return f, s
+
+
+
+def calculate_mean_ps(lfp_slice, time_range, sf=1250):
+    f_all, s_all = [], []
+    for i in lfp_slice.presentation_id.data:
+        
+        data = lfp_slice.sel(presentation_id=i).sel(time_from_presentation_onset=slice(time_range[0], time_range[1])).data
+        f,s = calculate_power_spectrum(data, sf)
+        f_all.append(f[:11]) # to select only 0-10 Hz frequencies
+        s_all.append(s[:11])
+    f = f_all[0] # the same for each presentation because Welch parameters are consistent
+    s_mean = np.array(s_all).mean(axis=0) # take the mean across presentations
+
+    # TODO: implement variance calculation
+
+    return f, s_mean
+
+
+
 def run(cache, probe_list, session_id, VELOCITY_THRESHOLD, window_range, sf, output_folder):
 
     channel_df = cache.get_channels()
@@ -232,43 +243,59 @@ def run(cache, probe_list, session_id, VELOCITY_THRESHOLD, window_range, sf, out
     # VISpm
 
     aligned_lfp = align_LFPs(toWhite_running_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toWhite_running_True_flashesAveragedOver_{toWhite_running_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
     aligned_lfp = align_LFPs(toBlack_running_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toBlack_running_True_flashesAveragedOver_{toBlack_running_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
     aligned_lfp = align_LFPs(toWhite_nonrunning_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toWhite_running_False_flashesAveragedOver_{toWhite_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
     aligned_lfp = align_LFPs(toBlack_nonrunning_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toBlack_running_False_flashesAveragedOver_{toBlack_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
     # VISp
 
     aligned_lfp = align_LFPs(toWhite_running_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toWhite_running_True_flashesAveragedOver_{toWhite_running_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
     aligned_lfp = align_LFPs(toBlack_running_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toBlack_running_True_flashesAveragedOver_{toBlack_running_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
     aligned_lfp = align_LFPs(toWhite_nonrunning_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toWhite_running_False_flashesAveragedOver_{toWhite_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
     aligned_lfp = align_LFPs(toBlack_nonrunning_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
+    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toBlack_running_False_flashesAveragedOver_{toBlack_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [aligned_lfp.time_from_presentation_onset, aligned_lfp.mean(dim='presentation_id')])
+    np.save(output_folder/filename, [f,s1,s2])
 
-    print(f'Session {session_id}: Averaged LFP traces saved for 8 flash/running conditions.\n')
+    print(f'Session {session_id}: Power spectra of LFP traces saved for 8 flash/running conditions.\n')
 
 if __name__ == '__main__':
-    output_folder = Path.home() / 'Desktop' / 'disk2' / 'grand_average_lfps'
+    output_folder = Path.home() / 'Desktop' / 'disk2' / 'lfp_power_spectra_dump'
     
     # Open file with velocity thresholds chosen in 1-velocity_threshold.ipynb
     with open('chosen_velocity_thresholds.pkl', 'rb') as f:
@@ -281,7 +308,7 @@ if __name__ == '__main__':
     with open('VISpm_VISp_probes.pkl', 'rb') as f:
         probe_list = pickle.load(f)
     
-    window = [-1, 2.25] # averaging time window with respect to start_time of flash presentation
+    window = [-1, 2] # averaging time window with respect to start_time of flash presentation
     sf = 1250 # LFP sampling frequency
      
     # run(cache, probe_list, 755434585, 7, window, sf, output_folder)
