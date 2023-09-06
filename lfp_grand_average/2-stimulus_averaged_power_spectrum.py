@@ -201,10 +201,10 @@ def calculate_mean_ps(lfp_slice, time_range, sf=1250):
         s_all.append(s[:11])
     f = f_all[0] # the same for each presentation because Welch parameters are consistent
     s_mean = np.array(s_all).mean(axis=0) # take the mean across presentations
+    s_std = np.array(s_all).std(axis=0)
+    sample_num = len(s_all)
 
-    # TODO: implement variance calculation
-
-    return f, s_mean
+    return f, s_mean, s_std, sample_num
 
 
 
@@ -243,54 +243,54 @@ def run(cache, probe_list, session_id, VELOCITY_THRESHOLD, window_range, sf, out
     # VISpm
 
     aligned_lfp = align_LFPs(toWhite_running_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toWhite_running_True_flashesAveragedOver_{toWhite_running_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     aligned_lfp = align_LFPs(toBlack_running_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toBlack_running_True_flashesAveragedOver_{toBlack_running_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     aligned_lfp = align_LFPs(toWhite_nonrunning_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toWhite_running_False_flashesAveragedOver_{toWhite_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     aligned_lfp = align_LFPs(toBlack_nonrunning_flashes, VISpm_lfp_slice, VISpm_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISpm_condition_toBlack_running_False_flashesAveragedOver_{toBlack_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISpm_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     # VISp
 
     aligned_lfp = align_LFPs(toWhite_running_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toWhite_running_True_flashesAveragedOver_{toWhite_running_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     aligned_lfp = align_LFPs(toBlack_running_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toBlack_running_True_flashesAveragedOver_{toBlack_running_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     aligned_lfp = align_LFPs(toWhite_nonrunning_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toWhite_running_False_flashesAveragedOver_{toWhite_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     aligned_lfp = align_LFPs(toBlack_nonrunning_flashes, VISp_lfp_slice, VISp_max_channel, window_range=window_range, sampling_frequency=sf)
-    _, s1 = calculate_mean_ps(aligned_lfp, [-1, 0])
-    f, s2 = calculate_mean_ps(aligned_lfp, [1, 2])
+    _, s1, s1_std, s1_snum = calculate_mean_ps(aligned_lfp, [-1, 0])
+    f, s2, s2_std, s2_snum = calculate_mean_ps(aligned_lfp, [1, 2])
     filename = f'sessionID_{session_id}_area_VISp_condition_toBlack_running_False_flashesAveragedOver_{toBlack_nonrunning_flashes.shape[0]}_micronsElectrodeDepth_{VISp_electrode_depth}.npy'
-    np.save(output_folder/filename, [f,s1,s2])
+    np.save(output_folder/filename, [f,s1,s1_std,s1_snum,s2,s2_std,s2_snum])
 
     print(f'Session {session_id}: Power spectra of LFP traces saved for 8 flash/running conditions.\n')
 
