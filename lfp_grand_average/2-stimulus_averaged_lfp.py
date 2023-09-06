@@ -281,7 +281,7 @@ if __name__ == '__main__':
     with open('VISpm_VISp_probes.pkl', 'rb') as f:
         probe_list = pickle.load(f)
     
-    window = [-1, 2.25] # averaging time window with respect to start_time of flash presentation
+    window = [-1, 2] # averaging time window with respect to start_time of flash presentation
     sf = 1250 # LFP sampling frequency
      
     # run(cache, probe_list, 755434585, 7, window, sf, output_folder)
