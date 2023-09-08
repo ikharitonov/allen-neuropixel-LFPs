@@ -22,7 +22,7 @@ As well as paths to directories with all relevant ecephys session/LFP data and r
 8) Each flash presentation is assigned with a class ([toWhite OR toBlack] AND [running OR nonrunning]) based on the flash data itself and chosen velocity threshold.
 9) Electrode depth of the maximum amplitude VISpm/VISp channel is read from metadata.
 10) VISpm/VISp LFP traces are aligned to each class of flash presentation according to chosen time window range (before and after the start time of the flash).
-11) Aligned LFP traces are averaged over presentations and saved into .npy files.
+11) Aligned LFP traces are saved into .npy files.
 
 """
 

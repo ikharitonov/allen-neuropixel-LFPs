@@ -9,7 +9,8 @@ from allensdk.brain_observatory.ecephys.ecephys_project_cache import EcephysProj
 
 """
 
-This script is identical to 2-stimulus_averaged_lfp.py, except for computing Power Spectral Density (PSD) for each presentation at step 11.
+This script is identical to 2-stimulus_averaged_lfp.py, except for computing the power spectrum with Welch's method for each presentation at step 11.
+In particular, the power spectrum is computed at -1s-0s and 1s-2s intervals with respect to flash stimulus onset.
 
 """
 
