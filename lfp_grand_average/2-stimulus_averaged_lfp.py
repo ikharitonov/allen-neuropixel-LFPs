@@ -269,7 +269,7 @@ def run(cache, probe_list, session_id, VELOCITY_THRESHOLD, window_range, sf, out
     print(f'Session {session_id}: Averaged LFP traces saved for 8 flash/running conditions.\n')
 
 if __name__ == '__main__':
-    output_folder = Path.home() / 'Desktop' / 'disk2' / 'grand_average_lfps'
+    output_folder = Path.home() / 'Desktop' / 'disk2' / 'lfp_ts_dump'
     
     # Open file with velocity thresholds chosen in 1-velocity_threshold.ipynb
     with open('chosen_velocity_thresholds.pkl', 'rb') as f:
