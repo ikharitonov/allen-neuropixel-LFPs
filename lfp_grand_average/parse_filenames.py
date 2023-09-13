@@ -2,7 +2,15 @@ import os
 import numpy as np
 import pandas as pd
 
-def parse_filenames(path):
+def tryconvert(value, default, *types):
+        for t in types:
+            try:
+                return t(value)
+            except (ValueError, TypeError):
+                continue
+        return default
+
+def parse_filenames(path, conversion_dict=None):
     file_list = os.listdir(path)
     
     get_splits = lambda l: [x.split('_') for x in l] # split strings
@@ -12,15 +20,8 @@ def parse_filenames(path):
     
     for i in range(len(parsed_dict)): parsed_dict[i]['filename'] = file_list[i]
     
-    def tryconvert(value, default, *types):
-        for t in types:
-            try:
-                return t(value)
-            except (ValueError, TypeError):
-                continue
-        return default
-
-    conversion_dict = {'sessionID': lambda x: int(x), 'area': lambda x: x, 'condition': lambda x: x, 'running': lambda x: x, 'flashesAveragedOver': lambda x: int(x), 'micronsElectrodeDepth': lambda x: tryconvert(x.split('.')[0], np.NaN, int), 'filename': lambda x: x} # conversion to appropriate datatypes
+    if not conversion_dict:
+        conversion_dict = {'sessionID': lambda x: int(x), 'area': lambda x: x, 'condition': lambda x: x, 'running': lambda x: x, 'flashesAveragedOver': lambda x: int(x), 'micronsElectrodeDepth': lambda x: tryconvert(x.split('.')[0], np.NaN, int), 'filename': lambda x: x} # conversion to appropriate datatypes
     apply_conversion = lambda x: {k: func(x[k]) for k, func in conversion_dict.items()}
     
     parsed_df = pd.DataFrame([apply_conversion(e) for e in parsed_dict])
