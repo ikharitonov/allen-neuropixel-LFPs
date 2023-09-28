@@ -2,6 +2,8 @@
 
 The main goal of this repository is to construct a pipeline for selective downloading, exploring and analysing of LFP data. Previous work has revealed the ~6Hz (theta) oscillation, especially prominent in secondary visual cortex (V2M). Here, this was investigated further by considering a large number of experimental sessions recorded by the Allen Institute. Data processing included filtering probe channels, classifying animal's running speed time series into running and non-running segments, alignment of LFPs to stimuli presentations. Analyses included testing normality of data, calculating weighted averages across sessions and spectral analysis across different segments.
 
+![image](flash_illustration.png)
+
 ## Data preparation
 
 ### AllenSDK
@@ -87,3 +89,5 @@ __lfp_grand_average/parse_filenames.py__ : returns a Pandas DataFrame containing
 __lfp_grand_average/3-grand_average.ipynb__ : calculates median + IQR for each session, weighted average across sessions
 
 __lfp_grand_average/3-power_spectrum_grand_average.ipynb__ : same approach as in 3-grand_average.ipynb applied to power spectra.
+
+__flash_figure.ipynb__ : notebook to create the image illustration for the project.
